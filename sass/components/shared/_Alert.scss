@@ -1,0 +1,37 @@
+.Alert {
+  & {
+    position: fixed;
+    top: 10rem;
+    right: 2rem;
+    z-index: 1000;
+    padding: 2rem;
+    box-shadow: $b-shadow;
+    border-radius: $b-radius;
+
+    @media screen and (max-width: 700px) {
+      top: initial;
+      right: initial;
+      padding: 1.5rem;
+      left: 50%;
+      bottom: 6rem;
+      transform: translateX(-50%);
+    }
+
+    &.white {
+      background-color: white;
+    }
+    &.dark {
+      background-color: $bg-color-d-theme;
+    }
+
+    &.error {
+      color: red;
+    }
+    &.success {
+      color: green;
+    }
+    &.info {
+      color: teal;
+    }
+  }
+}

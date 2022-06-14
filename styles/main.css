@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  font-size: 1.6rem;
+}
+
+.App {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.App.white {
+  background-color: #eee;
+  color: black;
+}
+
+.App.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+.btn, .btn:link, .btn:visited, .btn:focus, .btn:active {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-primary.white {
+  background-color: #0669BF;
+  color: white !important;
+}
+
+.btn-primary.white:hover {
+  background-color: #0884f0 !important;
+}
+
+.btn-primary.white:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.AppBar {
+  height: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .AppBar {
+    padding: 0 10rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .AppBar {
+    padding: 0 1rem;
+  }
+}
+
+.AppBar.white {
+  background-color: white;
+}
+
+.AppBar .logo-box, .AppBar .logo-box:link, .AppBar .logo-box:visited, .AppBar .logo-box:focus, .AppBar .logo-box:active {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: #0669BF;
+  font-size: 2rem;
+  margin-right: auto;
+}
+
+.AppBar .logo-box .logo, .AppBar .logo-box:link .logo, .AppBar .logo-box:visited .logo, .AppBar .logo-box:focus .logo, .AppBar .logo-box:active .logo {
+  height: 100%;
+  padding: 1rem;
+}
+
+.AppBar .logo-box .logo img, .AppBar .logo-box:link .logo img, .AppBar .logo-box:visited .logo img, .AppBar .logo-box:focus .logo img, .AppBar .logo-box:active .logo img {
+  height: 100%;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .AppBar .logo-box .for-desktop, .AppBar .logo-box:link .for-desktop, .AppBar .logo-box:visited .for-desktop, .AppBar .logo-box:focus .for-desktop, .AppBar .logo-box:active .for-desktop {
+    display: none;
+  }
+}
+
+.AppBar a.link-item, .AppBar a.link-item.white, .AppBar a.link-item:link, .AppBar a.link-item:link.white, .AppBar a.link-item:visited, .AppBar a.link-item:visited.white, .AppBar a.link-item:focus, .AppBar a.link-item:focus.white, .AppBar a.link-item:active, .AppBar a.link-item:active.white {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #0669BF;
+  display: block;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.AppBar a.link-item:hover {
+  background-color: #c7e4fd;
+}
+
+.AppBar a.link-item:active {
+  background-color: #64b4fa;
+}
+
+.AppBar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 1000px) {
+  .AppBar ul {
+    display: none;
+  }
+}
+
+.AppBar .hamburger {
+  padding: 2rem;
+  margin-left: 20rem;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+}
+
+.AppBar .hamburger:hover {
+  background-color: #c7e4fd;
+}
+
+.AppBar .hamburger:active {
+  background-color: #64b4fa;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.AppBar .hamburger .more {
+  display: block;
+  background-color: #0669BF;
+  width: 2.5rem;
+  height: 2px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border-radius: 0.3rem;
+}
+
+.AppBar .hamburger .more::after, .AppBar .hamburger .more::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+}
+
+.AppBar .hamburger .more::after {
+  position: absolute;
+  top: -0.8rem;
+}
+
+.AppBar .hamburger .more::before {
+  position: absolute;
+  top: 0.8rem;
+}
+/*# sourceMappingURL=main.css.map */

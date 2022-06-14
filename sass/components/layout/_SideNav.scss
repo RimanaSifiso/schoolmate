@@ -1,0 +1,46 @@
+.SideNavWrapper {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  @include blurred-bg;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .SideNav {
+    & {
+      width: 30%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      border-radius: $b-radius;
+      padding: 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+
+      * {
+        flex-grow: 1;
+      }
+
+      &.white {
+        background-color: white;
+      }
+      &.dark {
+        background-color: $bg-color-d-theme;
+        color: $text-color-d-theme;
+      }
+
+      @media screen and (max-width: 800px) {
+        width: 70%;
+      }
+    }
+  }
+}

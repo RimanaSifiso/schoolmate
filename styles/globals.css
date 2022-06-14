@@ -1,16 +1,683 @@
-html,
-body {
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+*, *::after, *::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-a {
-  color: inherit;
+html {
+  font-size: 62.5%;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h4,
+h3,
+h5,
+p,
+i {
+  opacity: 0.7;
+}
+
+.App {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.App.white {
+  background-color: #eee;
+  color: black;
+}
+
+.App.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+.Layout {
+  background-color: transparent;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.Layout::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+.Layout::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.Layout::-webkit-scrollbar-thumb {
+  background: #033473;
+}
+
+.Layout::-webkit-scrollbar-thumb:hover {
+  background: #79b2fc;
+}
+
+.btn, .btn:link, .btn:visited, .btn:focus, .btn:active {
+  border: none;
+  outline: none;
   text-decoration: none;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font: inherit !important;
+  font-weight: 600 !important;
+  font-size: 1.8rem !important;
+  cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
+.btn-primary.white {
+  background-color: #0669bf;
+  color: white !important;
 }
+
+.btn-primary.white:hover {
+  background-color: #0884f0 !important;
+}
+
+.btn-primary.white:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #0669bf;
+}
+
+.btn-outline.white:hover {
+  background-color: #c7e4fd;
+}
+
+.btn-outline.white:active {
+  background-color: #64b4fa;
+}
+
+.btn-outline.dark:hover {
+  background-color: #03335c;
+}
+
+.btn-outline.dark:active {
+  background-color: #01172b;
+}
+
+.AppBar {
+  height: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1400px) {
+  .AppBar {
+    padding: 0 10rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .AppBar {
+    padding: 0 1rem;
+  }
+}
+
+.AppBar.white {
+  background-color: white;
+}
+
+.AppBar.dark {
+  background-color: #1f1f1f;
+}
+
+.AppBar.dark a:hover,
+.AppBar.dark .hamburger:hover {
+  background-color: #03335c;
+}
+
+.AppBar.dark a:active,
+.AppBar.dark .hamburger:active {
+  background-color: #01172b;
+}
+
+.AppBar .logo-box, .AppBar .logo-box:link, .AppBar .logo-box:visited, .AppBar .logo-box:focus, .AppBar .logo-box:active {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: #0669bf;
+  font-size: 2rem;
+  margin-right: auto;
+}
+
+.AppBar .logo-box .logo, .AppBar .logo-box:link .logo, .AppBar .logo-box:visited .logo, .AppBar .logo-box:focus .logo, .AppBar .logo-box:active .logo {
+  height: 100%;
+  padding: 1rem;
+}
+
+.AppBar .logo-box .logo span, .AppBar .logo-box:link .logo span, .AppBar .logo-box:visited .logo span, .AppBar .logo-box:focus .logo span, .AppBar .logo-box:active .logo span {
+  height: 100% !important;
+  margin-right: 2rem;
+}
+
+.AppBar .logo-box .logo span img, .AppBar .logo-box:link .logo span img, .AppBar .logo-box:visited .logo span img, .AppBar .logo-box:focus .logo span img, .AppBar .logo-box:active .logo span img {
+  height: 100% !important;
+}
+
+@media screen and (max-width: 700px) {
+  .AppBar .logo-box .for-desktop, .AppBar .logo-box:link .for-desktop, .AppBar .logo-box:visited .for-desktop, .AppBar .logo-box:focus .for-desktop, .AppBar .logo-box:active .for-desktop {
+    display: none;
+  }
+}
+
+.AppBar a, .AppBar a.white, .AppBar a:link, .AppBar a:link.white, .AppBar a:visited, .AppBar a:visited.white, .AppBar a:focus, .AppBar a:focus.white, .AppBar a:active, .AppBar a:active.white {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #0669bf;
+  display: block;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.AppBar a:hover {
+  background-color: #c7e4fd;
+}
+
+.AppBar a:active {
+  background-color: #64b4fa;
+}
+
+.AppBar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AppBar ul .btn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .AppBar ul {
+    display: none;
+  }
+}
+
+.AppBar .hamburger {
+  padding: 2rem;
+  margin-left: 20rem;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+}
+
+.AppBar .hamburger:hover {
+  background-color: #c7e4fd;
+  border-radius: 0.3rem;
+}
+
+.AppBar .hamburger:active {
+  background-color: #64b4fa;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  border-radius: 0.3rem;
+}
+
+.AppBar .hamburger .more {
+  display: block;
+  background-color: #0669bf;
+  width: 2.5rem;
+  height: 2px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border-radius: 0.3rem;
+}
+
+.AppBar .hamburger .more::after, .AppBar .hamburger .more::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+}
+
+.AppBar .hamburger .more::after {
+  position: absolute;
+  top: -0.8rem;
+}
+
+.AppBar .hamburger .more::before {
+  position: absolute;
+  top: 0.8rem;
+}
+
+.SideNavWrapper {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.SideNavWrapper.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.SideNavWrapper .SideNav {
+  width: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 0.3rem;
+  padding: 2rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.SideNavWrapper .SideNav * {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.SideNavWrapper .SideNav.white {
+  background-color: white;
+}
+
+.SideNavWrapper .SideNav.dark {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .SideNavWrapper .SideNav {
+    width: 70%;
+  }
+}
+
+.MobileNav {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  display: none;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 600px) {
+  .MobileNav {
+    display: block;
+    height: 7rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+}
+
+.MobileNav.white {
+  background-color: white;
+}
+
+.MobileNav.dark {
+  background-color: #1f1f1f;
+}
+
+.signin-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50vw;
+  border-radius: 0.3rem;
+  padding: 5rem 0;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .signin-page {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .signin-page {
+    width: 90vw;
+    margin: 2rem auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .signin-page {
+    width: 80vw;
+  }
+}
+
+.signin-page.white {
+  background-color: white;
+}
+
+.signin-page.dark {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.signin-page .right-pane {
+  width: 85%;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.signin-page h1 {
+  font-size: 3rem;
+  color: #0669bf;
+  font-weight: 400;
+}
+
+.signin-page h2 {
+  font-weight: 400;
+  font-size: 3rem;
+  color: #0669bf;
+  text-align: center;
+}
+
+.signin-page .input-group {
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.signin-page .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .signin-page .btns {
+    margin: 3rem auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .signin-page .btns .btn:first-child {
+    margin-top: 1rem;
+  }
+  .signin-page .btns .btn:nth-child(2) {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+.signin-page .radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1rem 0;
+  padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .signin-page .radio-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.signin-page input[type='radio'] {
+  display: none;
+}
+
+.signin-page input[type='radio'] + label {
+  padding: 0.5rem 2rem;
+  border-radius: 0.3rem;
+  border: 2px solid #0669bf;
+  color: #0669bf;
+  font-weight: 600;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.signin-page input[type='radio'] + label:last-child {
+  margin-right: 0;
+}
+
+.signin-page input[type='radio'] + label span {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .signin-page input[type='radio'] + label {
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+}
+
+.signin-page input[type='radio']:checked + label {
+  background-color: #0669bf;
+  color: white;
+}
+
+.signin-page input[type='radio']:checked + label span {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.signin-page input[type='text'], .signin-page input[type='text']:focus, .signin-page input[type='text']:active,
+.signin-page input[type='email'],
+.signin-page input[type='email']:focus,
+.signin-page input[type='email']:active,
+.signin-page input[type='tel'],
+.signin-page input[type='tel']:focus,
+.signin-page input[type='tel']:active,
+.signin-page input[type='password'],
+.signin-page input[type='password']:focus,
+.signin-page input[type='password']:active {
+  border: 0;
+  outline: 0;
+  display: block;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 0.8rem 0.3rem;
+  margin: 3rem auto;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 2px solid #0669bf;
+  border-radius: 0.3rem;
+  width: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: 2px solid transparent;
+}
+
+.signin-page input[type='text']:focus,
+.signin-page input[type='email']:focus,
+.signin-page input[type='tel']:focus,
+.signin-page input[type='password']:focus {
+  outline: 2px solid rgba(6, 105, 191, 0.8);
+}
+
+.Alert {
+  position: fixed;
+  top: 10rem;
+  right: 2rem;
+  z-index: 1000;
+  padding: 2rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .Alert {
+    top: initial;
+    right: initial;
+    padding: 1.5rem;
+    left: 50%;
+    bottom: 6rem;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.Alert.white {
+  background-color: white;
+}
+
+.Alert.dark {
+  background-color: #1f1f1f;
+}
+
+.Alert.error {
+  color: red;
+}
+
+.Alert.success {
+  color: green;
+}
+
+.Alert.info {
+  color: teal;
+}
+
+.ModalWrapper {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.ModalWrapper .Modal {
+  padding: 2rem;
+  border-radius: 0.3rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.ModalWrapper .Modal.white {
+  background-color: white;
+}
+
+.ModalWrapper .Modal.dark {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+/*# sourceMappingURL=globals.css.map */

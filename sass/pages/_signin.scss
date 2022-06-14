@@ -1,0 +1,165 @@
+.signin-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50vw;
+  border-radius: $b-radius;
+  padding: 5rem 0;
+  margin: 2rem auto;
+
+  @media screen and (max-width: 1200px) {
+    width: 70vw;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 90vw;
+    margin: 2rem auto;
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 80vw;
+  }
+
+  &.white {
+    background-color: white;
+  }
+  &.dark {
+    background-color: $bg-color-d-theme;
+    color: $text-color-d-theme;
+  }
+
+  .right-pane {
+    width: 85%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: $color-secondary;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 3rem;
+    color: $color-secondary;
+    text-align: center;
+  }
+
+  .input-group {
+    width: 100%;
+    padding: 4rem 0;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media screen and (max-width: 700px) {
+      // width: 80%;
+      margin: 3rem auto;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+
+      .btn:first-child {
+        margin-top: 1rem;
+      }
+
+      .btn:nth-child(2) {
+        order: -1;
+      }
+    }
+  }
+
+  .radio-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    padding: 1rem 0;
+    padding-bottom: 3rem;
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    & + label {
+      padding: 0.5rem 2rem;
+      border-radius: $b-radius;
+      border: 2px solid $color-secondary;
+      color: $color-secondary;
+      font-weight: 600;
+      transition: all 0.3s;
+      flex-grow: 1;
+      text-align: center;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      margin-right: 2rem;
+
+      span {
+        display: none;
+      }
+
+      @media screen and (max-width: 700px) {
+        margin-right: 0;
+        margin-top: 1rem;
+      }
+    }
+
+    &:checked + label {
+      background-color: lighten($color-secondary, 0%);
+      color: white;
+
+      span {
+        display: inline-block;
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'] {
+    &,
+    &:focus,
+    &:active {
+      border: 0;
+      outline: 0;
+      display: block;
+      font-size: inherit;
+      font-family: inherit;
+      color: inherit;
+      padding: 0.8rem 0.3rem;
+      margin: 3rem auto;
+      margin-top: 1rem;
+      background-color: transparent;
+      border: 2px solid $color-secondary;
+      border-radius: $b-radius;
+      width: 100%;
+      transition: all 0.2s ease;
+      outline: 2px solid transparent;
+    }
+
+    @media screen and (max-width: 700px) {
+      // margin: 2rem auto;
+    }
+    &:focus {
+      outline: 2px solid rgba($color-secondary, 0.8);
+    }
+  }
+}

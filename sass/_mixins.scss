@@ -1,0 +1,36 @@
+@mixin center-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin container {
+  &.white {
+    background-color: white;
+  }
+  &.dark {
+    background-color: $bg-color-d-theme;
+    color: $text-color-d-theme;
+  }
+
+  padding: 2rem;
+  border-radius: $b-radius;
+}
+
+@mixin blurred-bg {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1px);
+}
+
+@mixin link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: $text-size-medium;
+  color: $color-secondary;
+  display: block;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}

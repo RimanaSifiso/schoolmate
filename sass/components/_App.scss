@@ -1,0 +1,16 @@
+.App {
+  &.white {
+    background-color: $bg-color-w-theme;
+    color: $text-color-w-theme;
+  }
+  &.dark {
+    background-color: $bg-default-dark;
+    color: $text-color-d-theme;
+  }
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+}
