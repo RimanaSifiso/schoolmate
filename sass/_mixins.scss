@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin container {
+@mixin theme {
   &.white {
     background-color: white;
   }
@@ -13,7 +13,10 @@
     background-color: $bg-color-d-theme;
     color: $text-color-d-theme;
   }
+}
 
+@mixin container {
+  @include theme;
   padding: 2rem;
   border-radius: $b-radius;
 }

@@ -17,7 +17,7 @@ export default function Home() {
         <meta name="author" content="Sifiso Rimana" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
       molestiae minus hic maiores explicabo odio dolorem, dolore distinctio at
       officiis excepturi, incidunt illo earum sequi ad, modi amet ea accusantium
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
@@ -79,7 +79,7 @@ export default function Home() {
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
       molestiae minus hic maiores explicabo odio dolorem, dolore distinctio at
       officiis excepturi, incidunt illo earum sequi ad, modi amet ea accusantium
-      officiis excepturi, incidunt illo earum sequi ad, modi amet ea accusantium
+      officiis excepturi, incidunt illo earum sequi ad, modi amet ea accusantium</p>
     </>
   )
 }

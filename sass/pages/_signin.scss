@@ -1,165 +1,99 @@
-.signin-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 50vw;
-  border-radius: $b-radius;
-  padding: 5rem 0;
-  margin: 2rem auto;
+.signin {
+  width: 50%;
+  margin: $normal-gutter auto;
+  text-align: center;
 
-  @media screen and (max-width: 1200px) {
-    width: 70vw;
-  }
-
-  @media screen and (max-width: 900px) {
-    width: 90vw;
-    margin: 2rem auto;
-  }
-
-  @media screen and (max-width: 700px) {
-    width: 80vw;
-  }
-
-  &.white {
-    background-color: white;
-  }
-  &.dark {
-    background-color: $bg-color-d-theme;
-    color: $text-color-d-theme;
-  }
-
-  .right-pane {
-    width: 85%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-  }
+  // background-color: yellow;
 
   h1 {
-    font-size: 3rem;
-    color: $color-secondary;
-    font-weight: 400;
+    margin-bottom: $normal-gutter;
   }
 
-  h2 {
-    font-weight: 400;
-    font-size: 3rem;
-    color: $color-secondary;
-    text-align: center;
+  &.dark {
+    .input-group {
+      background-color: lighten($color: $bg-color-d-theme, $amount: 10%);
+      input {
+        &,
+        &:focus,
+        &:active {
+          color: inherit;
+        }
+        &::placeholder {
+          color: inherit;
+          opacity: 0.7;
+        }
+      }
+    }
   }
 
   .input-group {
-    width: 100%;
-    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: $b-radius;
+
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: $small-gutter;
+
+    .onfocus {
+      background-color: yellow;
+    }
+
+    input {
+      &,
+      &:focus,
+      &:active {
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        flex: 1;
+        padding: 1rem;
+        font-family: inherit;
+        font-size: inherit;
+        padding-left: 2rem;
+      }
+    }
   }
 
-  .btns {
+  .btn-group {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-
-    @media screen and (max-width: 700px) {
-      // width: 80%;
-      margin: 3rem auto;
-      flex-direction: column;
-      justify-content: center;
-      align-self: center;
-
-      .btn:first-child {
-        margin-top: 1rem;
-      }
-
-      .btn:nth-child(2) {
-        order: -1;
-      }
-    }
-  }
-
-  .radio-container {
-    display: flex;
-    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: $small-gutter 0;
     flex-wrap: wrap;
-    // justify-content: space-between;
-    padding: 1rem 0;
-    padding-bottom: 3rem;
 
-    @media screen and (max-width: 700px) {
-      flex-direction: column;
-    }
-  }
+    input[type='radio'] {
+      display: none;
 
-  input[type='radio'] {
-    display: none;
-
-    & + label {
-      padding: 0.5rem 2rem;
-      border-radius: $b-radius;
-      border: 2px solid $color-secondary;
-      color: $color-secondary;
-      font-weight: 600;
-      transition: all 0.3s;
-      flex-grow: 1;
-      text-align: center;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      margin-right: 2rem;
-
-      span {
-        display: none;
-      }
-
-      @media screen and (max-width: 700px) {
-        margin-right: 0;
-        margin-top: 1rem;
+      &:checked + label {
+        border-color: $color-secondary;
+        color: $color-secondary;
+        font-weight: 600;
       }
     }
 
-    &:checked + label {
-      background-color: lighten($color-secondary, 0%);
-      color: white;
-
-      span {
-        display: inline-block;
-        padding: 0 1rem;
-      }
-    }
-  }
-
-  input[type='text'],
-  input[type='email'],
-  input[type='tel'],
-  input[type='password'] {
-    &,
-    &:focus,
-    &:active {
-      border: 0;
-      outline: 0;
+    label {
       display: block;
-      font-size: inherit;
-      font-family: inherit;
-      color: inherit;
-      padding: 0.8rem 0.3rem;
-      margin: 3rem auto;
-      margin-top: 1rem;
-      background-color: transparent;
-      border: 2px solid $color-secondary;
+      text-align: center;
+      border: 1px solid transparent;
       border-radius: $b-radius;
-      width: 100%;
-      transition: all 0.2s ease;
-      outline: 2px solid transparent;
-    }
+      background-color: white;
+      padding: 0.5rem;
+      width: 30%;
+      // flex-grow: 1;
 
-    @media screen and (max-width: 700px) {
-      // margin: 2rem auto;
+      @include theme;
     }
-    &:focus {
-      outline: 2px solid rgba($color-secondary, 0.8);
-    }
+  }
+  @media screen and (max-width: 1000px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 90%;
   }
 }
